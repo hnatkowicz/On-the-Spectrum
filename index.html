@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>On the Spectrum</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+
+    <header class="top">
+      <div class="brand">
+        <img class="brand__logo" src="logo.svg" alt="" aria-hidden="true" />
+      </div>
+    </header>
+
+    <!-- Screen 1: Setup -->
+    <main class="card" id="screen-setup" aria-labelledby="setup-title">
+      <div class="card__header">
+        <h2 id="setup-title">Start a new game</h2>
+        <p class="muted">
+          Choose how many teams are playing. (Each team will need at least <strong>2 players</strong>.)
+        </p>
+      </div>
+
+      <section class="section" aria-label="Team count selection">
+        <div class="teamcount">
+          <button type="button" class="pill" data-teamcount="2" aria-pressed="true">2 Teams</button>
+          <button type="button" class="pill" data-teamcount="3" aria-pressed="false">3 Teams</button>
+          <button type="button" class="pill" data-teamcount="4" aria-pressed="false">4 Teams</button>
+        </div>
+      </section>
+
+<section class="section" aria-label="Round count selection">
+  <div class="card__header" style="padding: 0 0 10px 0;">
+    <h2 style="margin:0 0 6px 0; font-size:18px; letter-spacing:-0.01em;">Standard rounds</h2>
+    <p class="muted" style="margin:0;">
+      Choose how many standard rounds to play. A final <strong>wager round</strong> is always added.
+    </p>
+  </div>
+
+  <div class="roundcount">
+    <button type="button" class="pill" data-roundcount="2" aria-pressed="true">2 Rounds</button>
+    <button type="button" class="pill" data-roundcount="3" aria-pressed="false">3 Rounds</button>
+    <button type="button" class="pill" data-roundcount="4" aria-pressed="false">4 Rounds</button>
+    <button type="button" class="pill" data-roundcount="5" aria-pressed="false">5 Rounds</button>
+  </div>
+
+  <p class="muted" style="margin:12px 0 0 0;">
+    Total rounds including wager: <strong id="total-rounds">3</strong>
+  </p>
+</section>
+
+      <section class="section section--actions">
+        <button type="button" class="btn btn--primary" id="continue-btn">
+          Continue →
+        </button>
+      </section>
+
+      <footer class="card__footer">
+        <p class="fineprint">
+          Tip: We’ll auto-populate teams later if you want. Big Clue Energy optional.
+        </p>
+      </footer>
+    </main>
+
+    <!-- Screen 2: Players -->
+    <main class="card hidden" id="screen-players" aria-labelledby="players-title">
+      <div class="card__header">
+        <h2 id="players-title">Players</h2>
+        <p class="muted">
+          Pick players from your bank, or add new ones.
+          Minimum to continue: <strong id="min-required">4</strong>
+        </p>
+      </div>
+
+      <section class="section">
+        <div class="grid2">
+
+          <!-- Left: Player Bank -->
+          <div class="panel">
+            <div class="panel__header">
+              <h3 class="panel__title">Player Bank</h3>
+              <p class="panel__sub muted">Tap a name to add them to this game.</p>
+            </div>
+
+            <div class="bank" id="bank-list" aria-label="Player bank list"></div>
+
+            <div class="divider"></div>
+
+            <form class="addrow" id="add-player-form" autocomplete="off">
+              <label class="sr-only" for="new-player">Add a new player</label>
+              <input
+                id="new-player"
+                class="input"
+                type="text"
+                placeholder="Add a new player…"
+                maxlength="30"
+              />
+              <button class="btn btn--primary" type="submit">Add</button>
+            </form>
+
+            <p class="fineprint">
+              Your player bank saves in this browser (localStorage).
+            </p>
+          </div>
+
+          <!-- Right: Selected -->
+          <div class="panel">
+            <div class="panel__header">
+              <h3 class="panel__title">Players in this game</h3>
+              <p class="panel__sub muted">We’ll assign teams next.</p>
+            </div>
+
+            <div class="selected" id="selected-list" aria-label="Selected players list"></div>
+
+            <div class="divider"></div>
+
+            <div class="statusline" role="status" aria-live="polite">
+              <span class="muted">Selected:</span>
+              <strong id="selected-count">0</strong>
+              <span class="muted">/ Min:</span>
+              <strong id="min-count">4</strong>
+            </div>
+
+            <p class="warn hidden" id="min-warning">
+              Add more players to continue (each team needs at least 2).
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="section section--actions">
+        <button type="button" class="btn btn--ghost" id="back-btn">← Back</button>
+        <button type="button" class="btn btn--primary" id="players-continue-btn" disabled>
+          Continue →
+        </button>
+      </section>
+
+      <footer class="card__footer">
+        <p class="fineprint">Tip: Your player bank will grow as you play.</p>
+      </footer>
+    </main>
+
+<!-- Screen 3: Team Selection -->
+<main class="card hidden" id="screen-teams" aria-labelledby="teams-title">
+  <div class="card__header">
+    <h2 id="teams-title">Teams</h2>
+    <p class="muted">
+      Choose how you want to build teams. Auto is fast; manual gives control.
+    </p>
+  </div>
+
+  <section class="section">
+    <div class="team-actions">
+      <button type="button" class="btn btn--ghost" id="manual-select-btn">
+        Manual Select
+      </button>
+
+      <button type="button" class="btn btn--primary" id="auto-select-btn">
+        Auto Select
+      </button>
+
+      <button type="button" class="btn btn--primary" id="start-game-btn" disabled>
+        Let’s get on the Spectrum!
+      </button>
+    </div>
+
+    <div class="divider"></div>
+
+    <div id="teams-preview" class="teams-preview" aria-label="Team preview"></div>
+  </section>
+
+  <section class="section section--actions">
+    <button type="button" class="btn btn--ghost" id="teams-back-btn">← Back</button>
+  </section>
+
+  <footer class="card__footer">
+    <p class="fineprint">Tip: Auto Select makes evenly sized teams. You can fine-tune later.</p>
+  </footer>
+</main>
+
+<!-- Screen 4: Pre-turn (private reveal) -->
+<main class="card hidden" id="screen-preturn" aria-labelledby="preturn-title">
+  <div class="card__header">
+    <h2 id="preturn-title">Next Turn</h2>
+    <p class="muted" id="preturn-meta">Round 1 • Turn 1</p>
+  </div>
+
+  <section class="section">
+    <div class="preturn-top">
+      <div class="preturn-up">
+        <span class="muted">Up next:</span>
+        <strong id="preturn-team">Team</strong>
+      </div>
+
+      <p class="fineprint preturn-hint">
+        Hand the device to one teammate. Press &amp; hold to reveal the target number.
+      </p>
+    </div>
+
+    <div class="reveal" id="reveal-box" aria-label="Press and hold to reveal target">
+      <div class="reveal__label">Press &amp; hold to reveal</div>
+      <div class="reveal__value" id="reveal-value">•••</div>
+    </div>
+
+    <div class="preturn-actions">
+      <button type="button" class="btn btn--ghost" id="bonus-btn">
+        Bonus (soon)
+      </button>
+
+      <button type="button" class="btn btn--primary" id="deliver-clue-btn">
+        Deliver your best clue →
+      </button>
+    </div>
+  </section>
+
+  <section class="section section--actions">
+    <button type="button" class="btn btn--ghost" id="preturn-back-btn">← Back</button>
+  </section>
+
+  <footer class="card__footer">
+    <p class="fineprint">Tip: Only the clue-giver should see the number.</p>
+  </footer>
+</main>
+
+<!-- Screen 5: Slider -->
+<main class="card hidden" id="screen-slider" aria-labelledby="slider-title">
+  <div class="card__header">
+    <h2 id="slider-title">Make your guess</h2>
+    <p class="muted" id="slider-tagline">Measure your meaning.</p>
+  </div>
+
+  <section class="section">
+    <div class="slider-meta">
+      <div class="team-pill" id="slider-team-pill">
+        <span class="muted">Up:</span>
+        <strong id="slider-team-name">—</strong>
+      </div>
+      <div class="muted" id="slider-round-meta">Round 1 • Turn 1</div>
+    </div>
+
+    <div class="spectrum-wrap">
+      <div class="spectrum-label" id="spectrum-left">—</div>
+
+<div class="vslider__track" id="vslider-track">
+  <div class="vslider__overlay hidden" id="vslider-overlay" aria-hidden="true"></div>
+
+<div class="vslider__marker vslider__marker--target hidden" id="target-marker" aria-hidden="true"></div>
+<div class="vslider__marker vslider__marker--guess hidden" id="guess-marker" aria-hidden="true"></div>
+
+  <div class="vslider__thumb" id="vslider-thumb" aria-hidden="true"></div>
+</div>
+
+      <div class="spectrum-label" id="spectrum-right">—</div>
+    </div>
+
+<div class="guess-readout">
+  <span class="muted">Your guess:</span>
+  <strong id="guess-value">50</strong>
+</div>
+
+<!-- Result row (hidden until Submit) -->
+<div class="resultrow hidden" id="result-row" aria-live="polite">
+  <div class="resultrow__item resultrow__item--target">
+    <span class="resultdot resultdot--target" aria-hidden="true"></span>
+    <strong id="target-value">—</strong>
+  </div>
+
+  <div class="resultrow__item resultrow__item--guess">
+    <span class="resultdot resultdot--guess" aria-hidden="true"></span>
+    <strong id="guess-value-final">—</strong>
+  </div>
+
+  <div class="resultrow__item resultrow__item--score">
+    <strong id="award-value">+0</strong>
+  </div>
+</div>
+
+  </section>
+
+  <section class="section section--actions">
+    <button type="button" class="btn btn--ghost" id="slider-back-btn">← Back</button>
+    <button type="button" class="btn btn--primary" id="submit-guess-btn">Submit</button>
+    <button type="button" class="btn btn--primary hidden" id="next-turn-btn">Next turn →</button>
+  </section>
+
+  <footer class="card__footer">
+    <p class="fineprint">Tip: Drag the blue slider. We’ll reveal the result after you submit.</p>
+  </footer>
+</main>
+
+<!-- Screen 6: Wager Setup -->
+<main class="card hidden" id="screen-wager" aria-labelledby="wager-title">
+  <div class="card__header">
+    <h2 id="wager-title">Final Round Wagers</h2>
+    <p class="muted">
+      You’ve reached the wager round. Each team wagers from their total points.
+    </p>
+  </div>
+
+  <section class="section">
+    <div class="wager-rules">
+      <div class="fineprint">
+        <strong>Wager rules:</strong>
+        Within ±2 → <strong>+wager</strong> (double that portion)<br />
+        Within ±4 → <strong>no change</strong><br />
+        Miss by &gt;4 → <strong>-ceil(wager/2)</strong>
+      </div>
+    </div>
+
+    <div id="wager-list" class="wager-list" aria-label="Wager inputs"></div>
+
+    <p class="warn hidden" id="wager-warning">
+      Fix wagers highlighted in red (must be 0 to the team’s total score).
+    </p>
+  </section>
+
+  <section class="section section--actions">
+    <button type="button" class="btn btn--ghost" id="wager-back-btn">← Back</button>
+    <button type="button" class="btn btn--primary" id="wager-start-btn">
+      Start Wager Round →
+    </button>
+  </section>
+
+  <footer class="card__footer">
+    <p class="fineprint">Tip: You can wager 0. Drama optional.</p>
+  </footer>
+</main>
+
+<!-- Screen 7: Final Score -->
+<main class="card hidden" id="screen-final" aria-labelledby="final-title">
+  <div class="card__header">
+    <h2 id="final-title">Final Score</h2>
+    <p class="muted" id="final-announcement">—</p>
+  </div>
+
+  <section class="section">
+    <div id="final-scoreboard" class="wager-list" aria-label="Final scoreboard"></div>
+  </section>
+
+  <section class="section section--actions">
+    <button type="button" class="btn btn--primary" id="final-restart-btn">
+      Return to Start →
+    </button>
+  </section>
+
+  <footer class="card__footer">
+    <p class="fineprint">Tip: Measure your meaning. Again.</p>
+  </footer>
+</main>
+
+  </div>
+
+<script src="data.js"></script>
+<script src="state.js"></script>
+<script src="screen-setup.js"></script>
+<script src="screen-players.js"></script>
+<script src="screen-teams.js"></script>
+<script src="screen-preturn.js"></script>
+<script src="screen-slider.js"></script>
+<script src="screen-wager.js"></script>
+<script src="screen-final.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

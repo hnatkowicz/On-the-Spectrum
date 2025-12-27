@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="137.97214mm"
+   height="20.662418mm"
+   viewBox="0 0 137.97214 20.662418"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-46.70556,-89.297368)">
+    <path
+       id="rect1"
+       style="fill:#008000;stroke-width:0.899888"
+       d="m 105.37126,97.25928 3.29588,-4.899562 h 12.32626 l 2.68187,2.114548 0.77361,-2.114548 h 2.78013 v 14.563812 h -3.41823 l -0.0938,-2.33313 -4.31892,-0.29261 -0.54702,2.62574 h -4.26683 l -0.0729,-2.62574 -2.18812,2.62574 -7.14097,0.0729 0.0745,-3.83502 0.59299,-1.25118 -0.5662,-0.12867 z"
+       sodipodi:nodetypes="ccccccccccccccccccc"
+       inkscape:export-filename="logo.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       id="rect3"
+       style="fill:#ff6600;stroke-width:2.18303"
+       d="m 50.635669,92.359737 -3.445268,3.445268 v 11.118705 h 6.097819 l 3.347599,-3.05563 -0.0078,3.05563 h 6.817155 V 92.359737 Z m 117.127221,0 v 14.563973 h 16.2543 V 92.359737 h -5.95674 l -2.61018,2.677356 h -5.43377 v -2.677356 z" />
+    <path
+       id="rect2"
+       style="fill:#ffff00;stroke-width:1.90613"
+       d="m 76.253227,92.359737 -4.191476,0.145728 -0.186035,10.175085 2.990515,4.24316 h 22.093742 l 2.461865,-1.79524 0.05994,-3.49178 -4.068485,-0.16691 1.038696,-1.18495 -0.03411,-2.711974 -1.611271,-0.152963 0.04754,-1.491381 4.529956,0.141593 -0.127641,-3.56464 -17.83147,-0.145728 v 1.5875 h -5.171777 z m 50.975703,0 v 14.563973 h 11.82563 l 3.50108,-3.90209 2.40709,3.90209 h 15.97318 l -0.10955,-2.69855 2.62568,2.69855 h 4.31085 V 92.359737 h -6.38928 l -0.69298,2.078943 -2.62568,-2.078943 h -6.12676 l -0.26406,1.698604 -4.62298,0.0155 v -1.714107 h -10.68513 l -3.06338,4.522205 0.0367,-4.522205 z M 63.445223,92.906991 V 106.92371 H 65.68798 V 95.386943 Z m 66.566997,4.682918 h 3.02514 v 3.792531 h -3.02514 z" />
+    <rect
+       style="fill:#0000ff;stroke:#ffffff;stroke-width:0.5"
+       id="rect8"
+       width="4.3322449"
+       height="20.162411"
+       x="140.42308"
+       y="89.547371"
+       ry="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:17.139px;line-height:1.25;font-family:'Lil Stuart PERSONAL USE ONLY';-inkscape-font-specification:'Lil Stuart PERSONAL USE ONLY';letter-spacing:0px;word-spacing:0px;stroke:#ffffff;stroke-width:0.5"
+       x="47.418312"
+       y="104.87208"
+       id="text9"><tspan
+         sodipodi:role="line"
+         id="tspan9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Dimitri Swank';-inkscape-font-specification:'Dimitri Swank';stroke:#ffffff;stroke-width:0.5"
+         x="47.418312"
+         y="104.87208">On the Spectrum</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.139px;line-height:1.25;font-family:'Lil Stuart PERSONAL USE ONLY';-inkscape-font-specification:'Lil Stuart PERSONAL USE ONLY';letter-spacing:0px;word-spacing:0px;stroke-width:0.0892653"
+       x="47.418312"
+       y="104.87208"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Dimitri Swank';-inkscape-font-specification:'Dimitri Swank';stroke-width:0.0892653"
+         x="47.418312"
+         y="104.87208">On the Spectrum</tspan></text>
+  </g>
+</svg>
