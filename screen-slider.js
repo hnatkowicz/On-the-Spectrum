@@ -178,24 +178,38 @@ Spectrum.screens.slider = (function () {
       els.guessMarker.classList.remove("hidden");
     }
 
-    // score
-    const guess = value;
-    const award = computeAward(target, guess, difficulty);
+// score
+const guess = value;
+const team = Spectrum.getActiveTeam();
+let award = 0;
 
-    if (Spectrum.state.game.currentTurn) {
-      Spectrum.state.game.currentTurn.guess = guess;
-      Spectrum.state.game.currentTurn.award = award;
-    }
+if (Spectrum.state.game.currentTurn) {
+  Spectrum.state.game.currentTurn.guess = guess;
+}
 
-    const team = Spectrum.getActiveTeam();
-    if (team) {
-      const tid = team.id;
-      Spectrum.state.game.scoreByTeamId = Spectrum.state.game.scoreByTeamId || {};
-      Spectrum.state.game.roundScoresByTeamId = Spectrum.state.game.roundScoresByTeamId || {};
+if (team) {
+  const tid = team.id;
+  Spectrum.state.game.scoreByTeamId ||= {};
+  Spectrum.state.game.roundScoresByTeamId ||= {};
 
-      Spectrum.state.game.scoreByTeamId[tid] = (Spectrum.state.game.scoreByTeamId[tid] || 0) + award;
-      Spectrum.state.game.roundScoresByTeamId[tid] = (Spectrum.state.game.roundScoresByTeamId[tid] || 0) + award;
-    }
+  if (Spectrum.state.game.roundType === "wager") {
+    // WAGER ROUND: special rules
+    award = Spectrum.resolveWagerTurn({
+      teamId: tid,
+      target,
+      guess
+    });
+  } else {
+    // STANDARD ROUND
+    award = computeAward(target, guess, difficulty);
+    Spectrum.state.game.scoreByTeamId[tid] =
+      (Spectrum.state.game.scoreByTeamId[tid] || 0) + award;
+    Spectrum.state.game.roundScoresByTeamId[tid] =
+      (Spectrum.state.game.roundScoresByTeamId[tid] || 0) + award;
+  }
+
+  Spectrum.state.game.currentTurn.award = award;
+}
 
     // numbers row
     if (els.targetValue) els.targetValue.textContent = String(target);
@@ -303,3 +317,4 @@ Spectrum.screens.slider = (function () {
 
   return { init, render };
 })();
+
