@@ -300,3 +300,25 @@ Spectrum.startWagerRound = function () {
   Spectrum.startTurn();
 };
 
+Spectrum.resolveWagerTurn = function ({ teamId, target, guess }) {
+  const rules = Spectrum.data.wagerRules;
+  const wager = Spectrum.state.game.wagersByTeamId[teamId] || 0;
+  const dist = Math.abs(target - guess);
+
+  let delta = 0;
+
+  if (dist <= rules.winWithin) {
+    delta = wager * (rules.winMultiplier - 1); // net gain
+  } else if (dist <= rules.neutralWithin) {
+    delta = 0;
+  } else {
+    const rawLoss = wager / rules.loseDivisor;
+    delta = -(rules.loseRounding === "floor"
+      ? Math.floor(rawLoss)
+      : Math.ceil(rawLoss));
+  }
+
+  Spectrum.state.game.scoreByTeamId[teamId] += delta;
+  return delta;
+};
+
