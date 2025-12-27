@@ -54,7 +54,7 @@ body{
 
 .brand__logo{
   width: min(640px, 100%);
-  height: 80%;
+  height: auto;
   display: block;
   background: transparent;
   border: none;
@@ -198,7 +198,10 @@ body{
 .hidden{ display: none !important; }
 
 @media (max-width: 480px){
-  .brand__logo{ width: 48px; height: 48px; }
+  .brand__logo{
+    width: min(92vw, 520px);
+    height: auto;
+  }
   .section--actions{ justify-content: stretch; }
   .btn{ flex: 1; }
 }
@@ -672,4 +675,5 @@ body{
 .wager-dot--green{ background: rgba(0,128,0,0.85); }
 .wager-dot--yellow{ background: rgba(255,255,0,0.95); border: 1px solid rgba(0,0,0,0.12); }
 .wager-dot--orange{ background: rgba(255,102,0,0.9); }
+
 
