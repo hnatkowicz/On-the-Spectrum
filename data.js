@@ -47,3 +47,15 @@ taglines: [
     noun: ["Nuns", "Dreamers", "Otters", "Pirates", "Robots", "Hippies", "Goblins", "Deuces", "Dawgs", "Comedians", "Flowers", "Ponies", "Clowns", "Daggers", "Chumps", "Kitties", "Door Mats", "Gangstas", "Jocks", "Swingers", "Truckers", "Jumpers", "Singers", "Riders", "Sprayers", "Sisters", "Ballers", "Fruit Bowl", "Growlers", "Lads", "Doodles", "Rebels", "Sleepers", "Razors", "Dingers", "Tally-whackers", "Dukes", "Mice", "Tweakers", "Winners", "Toothpicks", "Butchers", "Friends", "Ideas", "Lovers", "Belgians", "Meanies", "Quitters", "Believers", "Flakes"],
   },
 };
+
+Spectrum.data.wagerRules = {
+  // distance thresholds
+  winWithin: 2,      // <= this: win
+  neutralWithin: 4,  // <= this: neutral (but > winWithin)
+
+  // payouts
+  winAwardFactor: 1,           // +W * factor (1 means “+W”)
+  losePenaltyDivisor: 2,       // lose ceil(W/divisor)
+  losePenaltyRounding: "ceil", // "ceil" or "floor"
+};
+
