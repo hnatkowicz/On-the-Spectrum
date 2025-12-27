@@ -49,13 +49,12 @@ taglines: [
 };
 
 Spectrum.data.wagerRules = {
-  // distance thresholds
-  winWithin: 2,      // <= this: win
-  neutralWithin: 4,  // <= this: neutral (but > winWithin)
-
-  // payouts
-  winAwardFactor: 1,           // +W * factor (1 means “+W”)
-  losePenaltyDivisor: 2,       // lose ceil(W/divisor)
-  losePenaltyRounding: "ceil", // "ceil" or "floor"
+  winWithin: 2,
+  neutralWithin: 4,
+  winMultiplier: 2,     // double wager
+  loseDivisor: 2,       // lose half
+  loseRounding: "ceil"
 };
+
+
 
