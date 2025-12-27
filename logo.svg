@@ -3,39 +3,31 @@
 
 <svg
    width="137.97214mm"
-   height="20.662418mm"
-   viewBox="0 0 137.97214 20.662418"
+   height="20.662411mm"
+   viewBox="0 0 137.97214 20.662411"
    version="1.1"
    id="svg1"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview1"
-     pagecolor="#ffffff"
-     bordercolor="#111111"
-     borderopacity="1"
-     inkscape:showpageshadow="0"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="1"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="mm" />
   <defs
      id="defs1" />
   <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-46.70556,-89.297368)">
+     transform="translate(-46.705559,-89.297371)">
+    <text
+       xml:space="preserve"
+       style="font-size:17.139px;line-height:1.25;font-family:'Lil Stuart PERSONAL USE ONLY';-inkscape-font-specification:'Lil Stuart PERSONAL USE ONLY';letter-spacing:0px;word-spacing:0px;stroke:#ffffff;stroke-width:0.5"
+       x="47.418312"
+       y="104.87208"
+       id="text9"><tspan
+         id="tspan9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Dimitri Swank';-inkscape-font-specification:'Dimitri Swank';stroke:#ffffff;stroke-width:0.5"
+         x="47.418312"
+         y="104.87208">On the Spectrum</tspan></text>
     <path
        id="rect1"
        style="fill:#008000;stroke-width:0.899888"
-       d="m 105.37126,97.25928 3.29588,-4.899562 h 12.32626 l 2.68187,2.114548 0.77361,-2.114548 h 2.78013 v 14.563812 h -3.41823 l -0.0938,-2.33313 -4.31892,-0.29261 -0.54702,2.62574 h -4.26683 l -0.0729,-2.62574 -2.18812,2.62574 -7.14097,0.0729 0.0745,-3.83502 0.59299,-1.25118 -0.5662,-0.12867 z"
-       sodipodi:nodetypes="ccccccccccccccccccc"
-       inkscape:export-filename="logo.svg"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
+       d="m 105.37126,97.25928 3.29588,-4.899562 h 12.32626 l 2.68187,2.114548 0.77361,-2.114548 h 2.78013 v 14.563812 h -3.41823 l -0.0938,-2.33313 -4.31892,-0.29261 -0.54702,2.62574 h -4.26683 l -0.0729,-2.62574 -2.18812,2.62574 -7.14097,0.0729 0.0745,-3.83502 0.59299,-1.25118 -0.5662,-0.12867 z" />
     <path
        id="rect3"
        style="fill:#ff6600;stroke-width:2.18303"
@@ -54,22 +46,10 @@
        ry="0" />
     <text
        xml:space="preserve"
-       style="font-size:17.139px;line-height:1.25;font-family:'Lil Stuart PERSONAL USE ONLY';-inkscape-font-specification:'Lil Stuart PERSONAL USE ONLY';letter-spacing:0px;word-spacing:0px;stroke:#ffffff;stroke-width:0.5"
-       x="47.418312"
-       y="104.87208"
-       id="text9"><tspan
-         sodipodi:role="line"
-         id="tspan9"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Dimitri Swank';-inkscape-font-specification:'Dimitri Swank';stroke:#ffffff;stroke-width:0.5"
-         x="47.418312"
-         y="104.87208">On the Spectrum</tspan></text>
-    <text
-       xml:space="preserve"
        style="font-size:17.139px;line-height:1.25;font-family:'Lil Stuart PERSONAL USE ONLY';-inkscape-font-specification:'Lil Stuart PERSONAL USE ONLY';letter-spacing:0px;word-spacing:0px;stroke-width:0.0892653"
        x="47.418312"
        y="104.87208"
        id="text1"><tspan
-         sodipodi:role="line"
          id="tspan1"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Dimitri Swank';-inkscape-font-specification:'Dimitri Swank';stroke-width:0.0892653"
          x="47.418312"
